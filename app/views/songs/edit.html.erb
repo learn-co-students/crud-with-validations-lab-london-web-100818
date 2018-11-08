@@ -1,0 +1,22 @@
+<h2>Edit Song</h2>
+
+<% if flash[:error] %>
+  <div id="error_explanation">
+    <h2>
+      <%= pluralize(flash[:error].count, "error") %>
+      prohibited this post from being saved:
+    </h2>
+    <ul>
+    <% flash[:error].each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+ 
+
+<%= render "form" %>
+
+ 
+
+      <%= link_to 'Delete', song_path(@song), method: :delete %> 
