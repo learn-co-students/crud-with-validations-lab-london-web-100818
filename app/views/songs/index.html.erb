@@ -1,0 +1,17 @@
+<h1>All Songs</h1>
+<table>
+<% @songs.each do |s| %>
+<tbody>
+<tr>
+<td><%= s.title %></td>
+<td><% if s.released %>
+    <p>released in <%= s.release_year %></p>
+<% else %>
+    <p>unreleased</p>
+<% end %><td>
+<td><%= s.artist_name %><td>
+<td><%= s.genre %><td>
+</tr>
+</tbody>
+<% end %>
+</table>
